@@ -80,10 +80,12 @@ class WelcomeQuestions extends React.Component {
     }
 
     return(
-      <form onSubmit={this.props.onAdvance}>
-        <label>{labelText}</label><br />
-        <input onChange={this.props.onChange} value={this.props.text}/>
-      </form>
+      <div className="welcome-questions">
+        <form onSubmit={this.props.onAdvance}>
+          <label>{labelText}</label><br />
+          <input onChange={this.props.onChange} value={this.props.text}/>
+        </form>
+      </div>
     )
 
   }
@@ -93,9 +95,9 @@ class WelcomeQuestions extends React.Component {
 class MinimumOrder extends React.Component {
   render() {
     return (
-      <div>
+      <div className="minimum-order">
         <h1>You need to make</h1>
-        <h2>{this.props.minimumAmount}</h2>
+        <h2>${this.props.minimumAmount.toFixed(2)}</h2>
         <h1>per order to reach your goal.</h1>
       </div>
     )
